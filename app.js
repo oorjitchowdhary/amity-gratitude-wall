@@ -46,12 +46,12 @@ app.get('/', async (req, res) => {
             }
         }
 
-        console.log(gratitude);
+        wall.push(gratitude);
+
+        if (wall.length === database.results.length) {
+            return res.render('index', { wall });
+        }
     });
-
-    console.log(wall);
-
-    res.render('index', { wall: wall });
 });
 
 app.post('/', async (req, res) => {

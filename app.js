@@ -19,6 +19,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', async (req, res) => {
     const database = await notion.databases.query({
         database_id: databaseId,
+        filter: {
+            "property": "approved",
+            "checkbox": {
+                "equals": true
+            }
+        }
     });
 
     let wall = [];

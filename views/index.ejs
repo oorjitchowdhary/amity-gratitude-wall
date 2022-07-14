@@ -15,9 +15,9 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
   </head>
   <body>
-    <h1>Hello, world!</h1>
     <div class="container">
       <div class="col">
         <form action="/" method="POST">
@@ -63,6 +63,26 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</input>
         </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <h1>The Wall</h1>
+      <div class="row" data-masonry='{"percentPosition": true }'>
+        <% wall.forEach(function(gratitude) { %>
+          <div class="col-sm-6 col-lg-4 mb-4">
+            <div class="card p-3">
+              <figure class="p-3 mb-0">
+                <blockquote class="blockquote">
+                  <p>“<%- gratitude[2] %>”</p>
+                </blockquote>
+                <figcaption class="blockquote-footer mb-0 text-muted">
+                  <%- gratitude[3] %>, <%- gratitude[1] %>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+          <% }); %>
       </div>
     </div>
   </body>

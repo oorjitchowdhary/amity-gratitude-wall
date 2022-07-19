@@ -12,7 +12,7 @@ const app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
-app.use(express.static(__dirname + '/static'));
+app.use('/static', express.static(path.join(__dirname, 'static')));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -100,4 +100,6 @@ app.post('/', async (req, res) => {
     }
 });
 
-app.listen(PORT, console.log(`Listening on port ${PORT}.`));
+app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}`);
+});

@@ -18,10 +18,10 @@
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
   </head>
   <body>
-    <nav class="navbar sticky-top">
+    <nav class="navbar sticky-top bg-light">
       <div class="container-fluid">
         <div class="navbar-brand">
-          <img src="https://toppersunited.com/wp-content/uploads/2018/12/amity-international-school-logo-1-300x300.jpg" alt="logo" width="60" height="60" class="d-inline-block align-text-center">
+          <img src="../static/logo.png" alt="logo" width="60" height="60" class="d-inline-block align-text-center">
           <span style="font-size: 3vh;">Amity International School, Sector 46, Gurgaon</span>
         </div>
         <div class="d-flex">
@@ -30,7 +30,7 @@
       </div>
     </nav>
 
-    <hr style="margin: 0; margin-bottom: 2vh;"/>
+    <br/>
 
     <div class="container">
       <div class="row" data-masonry='{"percentPosition": true }'>
@@ -66,6 +66,7 @@
                       class="form-control"
                       id="name"
                       placeholder="John Doe"
+                      autofocus
                     />
                   </div>
                   <div class="mb-3">
@@ -86,6 +87,7 @@
                       <option value="teacher">Teacher</option>
                       <option value="alumni">Alumni</option>
                       <option value="parent">Parent</option>
+                      <option value="guest">Guest</option>
                     </select>
                   </div>
                   <div class="mb-3">

@@ -37,10 +37,11 @@ app.get('/', async (req, res) => {
             const propertyValue = await notion.pages.properties.retrieve({ page_id: pageId, property_id: pageProperties[property].id });
             if (propertyValue.type === 'select') {
                 const palette = {
-                    'student': '#2F80ED',
-                    'alumni': '#67B26F',
-                    'parent': '#3494E6',
-                    'teacher': '#DE6161',
+                    'student': '#2a52be',
+                    'alumni': '#00416A',
+                    'parent': '#002D72',
+                    'teacher': '#0066b2',
+                    'guest (feedback)': '#5A4FCF'
                 }
                 gratitude.push(palette[propertyValue.select.name], propertyValue.select.name);
             } else if ('results' in propertyValue) {

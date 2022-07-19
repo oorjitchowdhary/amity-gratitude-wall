@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Vollkorn+SC:wght@900&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    color: #fff;
+    font-family: 'Crimson Pro', serif;
+}
+
+.modal {
+    color: #000;
+}
+
+.background {
+    background: #fff url(http://ais.amity.edu/gurugram46/wp-content/uploads/2022/02/aisg46_001-11.jpg) no-repeat center center;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    filter: blur(36px);
+    -webkit-filter: blur(8px);
+    z-index: -1;
+}
+
+.container {
+    z-index: 20;
+    height: 100%;
+    width: 100%;
+}
+
+.vollkorn {
+    font-family: 'Vollkorn SC', serif;
+}

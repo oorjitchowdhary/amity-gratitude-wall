@@ -15,33 +15,35 @@
       integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../static/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
   </head>
   <body>
-    <nav class="navbar sticky-top bg-light">
-      <div class="container-fluid">
-        <div class="navbar-brand">
-          <img src="../static/logo.png" alt="logo" width="60" height="60" class="d-inline-block align-text-center">
-          <span style="font-size: 3vh;">Amity International School, Sector 46, Gurgaon</span>
-        </div>
-        <div class="d-flex">
-          <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#formModal" style="background: #67B26F; color: #fff;">Write yours</button>
-        </div>
-      </div>
-    </nav>
-
-    <br/>
+    <div class="background"></div>
 
     <div class="container">
+      <div style="p-5 mb-4 rounded-3">
+        <div class="container-fluid py-5">
+          <div>
+            <img src="../static/logo.png" alt="logo" width="80" height="80" class="d-inline-block align-top">
+            <h1 class="display-2 fw-bold d-inline-block align-middle vollkorn">Amity 46 Gratitude Wall</h1>
+          </div>
+          <p class="col-md-9 fs-4">
+            Building an attitude of gratitude goes a long way in making a conscious habit to express appreciation. This Wall is an attempt to capture all the positivity around us digitally and enhance it further with a commitment towards humility.
+          </p>
+          <button class="btn btn-light btn-lg" type="button" data-bs-toggle="modal" data-bs-target="#formModal">Write yours</button>
+        </div>
+      </div>
+
       <div class="row" data-masonry='{"percentPosition": true }'>
         <% wall.forEach(function(gratitude) { %>
-          <div class="col-sm-6 col-lg-3 mb-4">
-            <div class="card p-3" style="background-color: <%= gratitude[0] %>; color: #fff;">
+          <div class="col-md-3 mb-4">
+            <div class="card p-3" style="background-color: <%= gratitude[0] %>; color: #fff; border: none;">
               <figure class="p-3 mb-0">
                 <blockquote class="blockquote">
-                  <p>“<%- gratitude[2] %>”</p>
-                </blockquote><br/>
-                <figcaption class="blockquote-footer mb-0" style="text-transform: capitalize; font-size: 2vh; color: #ddd;">
+                  <p style="font-size: 1.3rem;">“<%- gratitude[2] %>”</p>
+                </blockquote>
+                <figcaption class="blockquote-footer mb-0" style="text-transform: capitalize; color: #ddd; font-size: 1.1rem;">
                   <%- gratitude[3] %>, <%- gratitude[1] %>
                 </figcaption>
               </figure>
@@ -87,7 +89,7 @@
                       <option value="teacher">Teacher</option>
                       <option value="alumni">Alumni</option>
                       <option value="parent">Parent</option>
-                      <option value="guest">Guest</option>
+                      <option value="guest (feedback)">Guest</option>
                     </select>
                   </div>
                   <div class="mb-3">
@@ -100,9 +102,10 @@
                       id="message-input"
                       rows="3"
                       placeholder="Type your message here..."
+                      cols="10"
                     ></textarea>
                   </div>
-                  <button type="submit" class="btn" style="background: #67B26F; color: #fff;">Submit</input>
+                  <button type="submit" class="btn" style="background: #0066b2; border: #0066b2; color: #fff;">Submit</input>
                 </form>
               </div>
             </div>

@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="../static/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async></script>
   </head>
+
   <body>
     <div class="background"></div>
 
@@ -59,7 +60,7 @@
                 <h2 class="modal-title">Write a gratitude</h2>
               </div>
               <div class="modal-body">
-                <form action="/" method="POST">
+                <form action="/" method="POST" onsubmit="submitBtn.disabled=true; return true;">
                   <div class="mb-3">
                     <label for="name" class="form-label">Your name</label>
                     <input
@@ -105,12 +106,24 @@
                       cols="10"
                     ></textarea>
                   </div>
-                  <button type="submit" class="btn" style="background: #0066b2; border: #0066b2; color: #fff;">Submit</input>
+                  <input type="submit" name="submitBtn" class="btn" style="background: #0066b2; border: #0066b2; color: #fff;"></input>
                 </form>
               </div>
             </div>
           </div>
       </div>
     </div>
+    
+    <script defer async>
+      const params = new URLSearchParams(window.location.search);
+      if (!!params.has('status')) {
+        const status = params.get('status');
+        if (status === 'success') {
+          alert('Successfully sent message to database.');
+        } else if (status === 'error') {
+          alert('Failed to send your message. Please retry.');
+        }
+      }
+    </script>
   </body>
 </html>

@@ -95,9 +95,9 @@ app.post('/', async (req, res) => {
             properties: properties
         });
 
-        return res.redirect('/');
+        return res.redirect('/?status=success');
     } catch (err) {
-        return res.send("failed to add to db");
+        return res.redirect('/?status=error');
     }
 });
 
